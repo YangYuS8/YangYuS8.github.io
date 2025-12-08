@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yangyus8.top/sitemap.xml
