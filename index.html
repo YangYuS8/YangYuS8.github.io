@@ -1,1741 +1,512 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>杨栋森</title>
-  <style>/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
-
-  :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    --color-red-50: oklch(97.1% 0.013 17.38);
-    --color-red-100: oklch(93.6% 0.032 17.717);
-    --color-blue-100: oklch(93.2% 0.032 255.585);
-    --color-blue-200: oklch(88.2% 0.059 254.128);
-    --color-blue-300: oklch(80.9% 0.105 251.813);
-    --color-slate-400: oklch(70.4% 0.04 256.788);
-    --color-slate-500: oklch(55.4% 0.046 257.417);
-    --color-slate-600: oklch(44.6% 0.043 257.281);
-    --color-slate-800: oklch(27.9% 0.041 260.031);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-600: oklch(44.6% 0.03 256.802);
-    --color-zinc-50: oklch(98.5% 0 0);
-    --color-zinc-100: oklch(96.7% 0.001 286.375);
-    --color-zinc-200: oklch(92% 0.004 286.32);
-    --color-zinc-300: oklch(87.1% 0.006 286.286);
-    --color-zinc-400: oklch(70.5% 0.015 286.067);
-    --color-zinc-500: oklch(55.2% 0.016 285.938);
-    --color-zinc-600: oklch(44.2% 0.017 285.786);
-    --color-zinc-700: oklch(37% 0.013 285.805);
-    --color-zinc-800: oklch(27.4% 0.006 286.033);
-    --color-zinc-900: oklch(21% 0.006 285.885);
-    --color-black: #000;
-    --color-white: #fff;
-    --spacing: 0.25rem;
-    --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
-    --font-weight-light: 300;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-    --font-weight-black: 900;
-    --tracking-tight: -0.025em;
-    --tracking-wide: 0.025em;
-    --tracking-wider: 0.05em;
-    --tracking-widest: 0.1em;
-    --leading-relaxed: 1.625;
-    --leading-loose: 2;
-    --radius-sm: 0.25rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
-    --default-font-family: var(--font-sans);
-    --default-mono-font-family: var(--font-mono);
-  }
-
-
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0 solid;
-  }
-  html, :host {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-    font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var(--default-font-variation-settings, normal);
-    -webkit-tap-highlight-color: transparent;
-  }
-  hr {
-    height: 0;
-    color: inherit;
-    border-top-width: 1px;
-  }
-  abbr:where([title]) {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-  }
-  a {
-    color: inherit;
-    -webkit-text-decoration: inherit;
-    text-decoration: inherit;
-  }
-  b, strong {
-    font-weight: bolder;
-  }
-  code, kbd, samp, pre {
-    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
-    font-feature-settings: var(--default-mono-font-feature-settings, normal);
-    font-variation-settings: var(--default-mono-font-variation-settings, normal);
-    font-size: 1em;
-  }
-  small {
-    font-size: 80%;
-  }
-  sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-  sub {
-    bottom: -0.25em;
-  }
-  sup {
-    top: -0.5em;
-  }
-  table {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse;
-  }
-  :-moz-focusring {
-    outline: auto;
-  }
-  progress {
-    vertical-align: baseline;
-  }
-  summary {
-    display: list-item;
-  }
-  ol, ul, menu {
-    list-style: none;
-  }
-  img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-  }
-  img, video {
-    max-width: 100%;
-    height: auto;
-  }
-  button, input, select, optgroup, textarea, ::file-selector-button {
-    font: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    border-radius: 0;
-    background-color: transparent;
-    opacity: 1;
-  }
-  :where(select:is([multiple], [size])) optgroup {
-    font-weight: bolder;
-  }
-  :where(select:is([multiple], [size])) optgroup option {
-    padding-inline-start: 20px;
-  }
-  ::file-selector-button {
-    margin-inline-end: 4px;
-  }
-  ::placeholder {
-    opacity: 1;
-  }
-  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
-    ::placeholder {
-      color: currentcolor;
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, currentcolor 50%, transparent);
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杨栋森 · 云原生 / DevOps 实习生</title>
+    <meta
+      name="description"
+      content="杨栋森的个人网站，展示个人简介、技术栈、项目经历、开源项目与联系方式。"
+    />
+    <link rel="canonical" href="https://yangyus8.top/" />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: rgba(15, 23, 42, 0.72);
+        --panel-strong: #111827;
+        --text: #e5eefc;
+        --muted: #9fb0d0;
+        --line: rgba(148, 163, 184, 0.18);
+        --brand: #60a5fa;
+        --brand-2: #22d3ee;
+        --ok: #34d399;
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+        --max: 1120px;
       }
-    }
-  }
-  textarea {
-    resize: vertical;
-  }
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-  ::-webkit-date-and-time-value {
-    min-height: 1lh;
-    text-align: inherit;
-  }
-  ::-webkit-datetime-edit {
-    display: inline-flex;
-  }
-  ::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-  }
-  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
-    padding-block: 0;
-  }
-  ::-webkit-calendar-picker-indicator {
-    line-height: 1;
-  }
-  :-moz-ui-invalid {
-    box-shadow: none;
-  }
-  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
-    appearance: button;
-  }
-  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
-    height: auto;
-  }
-  [hidden]:where(:not([hidden="until-found"])) {
-    display: none !important;
-  }
 
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 28%),
+          radial-gradient(circle at top right, rgba(96, 165, 250, 0.14), transparent 28%),
+          linear-gradient(180deg, #0b1020 0%, #0a0f1b 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
 
-  .visible {
-    visibility: visible;
-  }
-  .absolute {
-    position: absolute;
-  }
-  .relative {
-    position: relative;
-  }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
-  .-top-8 {
-    top: calc(var(--spacing) * -8);
-  }
-  .-top-10 {
-    top: calc(var(--spacing) * -10);
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
-  .top-1\/2 {
-    top: calc(1/2 * 100%);
-  }
-  .top-4 {
-    top: calc(var(--spacing) * 4);
-  }
-  .top-6 {
-    top: calc(var(--spacing) * 6);
-  }
-  .top-16 {
-    top: calc(var(--spacing) * 16);
-  }
-  .-right-8 {
-    right: calc(var(--spacing) * -8);
-  }
-  .-right-10 {
-    right: calc(var(--spacing) * -10);
-  }
-  .right-0 {
-    right: calc(var(--spacing) * 0);
-  }
-  .right-6 {
-    right: calc(var(--spacing) * 6);
-  }
-  .right-8 {
-    right: calc(var(--spacing) * 8);
-  }
-  .right-16 {
-    right: calc(var(--spacing) * 16);
-  }
-  .right-20 {
-    right: calc(var(--spacing) * 20);
-  }
-  .right-24 {
-    right: calc(var(--spacing) * 24);
-  }
-  .-bottom-6 {
-    bottom: calc(var(--spacing) * -6);
-  }
-  .bottom-0 {
-    bottom: calc(var(--spacing) * 0);
-  }
-  .bottom-2 {
-    bottom: calc(var(--spacing) * 2);
-  }
-  .bottom-3 {
-    bottom: calc(var(--spacing) * 3);
-  }
-  .bottom-4 {
-    bottom: calc(var(--spacing) * 4);
-  }
-  .bottom-6 {
-    bottom: calc(var(--spacing) * 6);
-  }
-  .-left-1\.5 {
-    left: calc(var(--spacing) * -1.5);
-  }
-  .-left-4 {
-    left: calc(var(--spacing) * -4);
-  }
-  .-left-\[31px\] {
-    left: calc(31px * -1);
-  }
-  .left-0 {
-    left: calc(var(--spacing) * 0);
-  }
-  .left-4 {
-    left: calc(var(--spacing) * 4);
-  }
-  .z-10 {
-    z-index: 10;
-  }
-  .float-left {
-    float: left;
-  }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
-  .mx-4 {
-    margin-inline: calc(var(--spacing) * 4);
-  }
-  .mx-auto {
-    margin-inline: auto;
-  }
-  .my-2 {
-    margin-block: calc(var(--spacing) * 2);
-  }
-  .mt-0\.5 {
-    margin-top: calc(var(--spacing) * 0.5);
-  }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
-  .mt-1\.5 {
-    margin-top: calc(var(--spacing) * 1.5);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-3 {
-    margin-top: calc(var(--spacing) * 3);
-  }
-  .mt-4 {
-    margin-top: calc(var(--spacing) * 4);
-  }
-  .mt-6 {
-    margin-top: calc(var(--spacing) * 6);
-  }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .mr-1 {
-    margin-right: calc(var(--spacing) * 1);
-  }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
-  .mb-1\.5 {
-    margin-bottom: calc(var(--spacing) * 1.5);
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-  .mb-4 {
-    margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
-  }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
-  .mb-7 {
-    margin-bottom: calc(var(--spacing) * 7);
-  }
-  .mb-8 {
-    margin-bottom: calc(var(--spacing) * 8);
-  }
-  .mb-10 {
-    margin-bottom: calc(var(--spacing) * 10);
-  }
-  .mb-12 {
-    margin-bottom: calc(var(--spacing) * 12);
-  }
-  .ml-1 {
-    margin-left: calc(var(--spacing) * 1);
-  }
-  .ml-1\.5 {
-    margin-left: calc(var(--spacing) * 1.5);
-  }
-  .ml-2 {
-    margin-left: calc(var(--spacing) * 2);
-  }
-  .ml-3 {
-    margin-left: calc(var(--spacing) * 3);
-  }
-  .ml-5 {
-    margin-left: calc(var(--spacing) * 5);
-  }
-  .ml-auto {
-    margin-left: auto;
-  }
-  .block {
-    display: block;
-  }
-  .flex {
-    display: flex;
-  }
-  .grid {
-    display: grid;
-  }
-  .hidden {
-    display: none;
-  }
-  .inline {
-    display: inline;
-  }
-  .inline-block {
-    display: inline-block;
-  }
-  .inline-flex {
-    display: inline-flex;
-  }
-  .table {
-    display: table;
-  }
-  .h-0 {
-    height: calc(var(--spacing) * 0);
-  }
-  .h-0\.5 {
-    height: calc(var(--spacing) * 0.5);
-  }
-  .h-1 {
-    height: calc(var(--spacing) * 1);
-  }
-  .h-1\.5 {
-    height: calc(var(--spacing) * 1.5);
-  }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
-  }
-  .h-2\.5 {
-    height: calc(var(--spacing) * 2.5);
-  }
-  .h-3 {
-    height: calc(var(--spacing) * 3);
-  }
-  .h-4 {
-    height: calc(var(--spacing) * 4);
-  }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
-  .h-14 {
-    height: calc(var(--spacing) * 14);
-  }
-  .h-16 {
-    height: calc(var(--spacing) * 16);
-  }
-  .h-18 {
-    height: calc(var(--spacing) * 18);
-  }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
-  .h-24 {
-    height: calc(var(--spacing) * 24);
-  }
-  .h-28 {
-    height: calc(var(--spacing) * 28);
-  }
-  .h-32 {
-    height: calc(var(--spacing) * 32);
-  }
-  .h-36 {
-    height: calc(var(--spacing) * 36);
-  }
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
-  .h-\[1px\] {
-    height: 1px;
-  }
-  .h-\[2px\] {
-    height: 2px;
-  }
-  .h-\[3px\] {
-    height: 3px;
-  }
-  .h-\[80px\] {
-    height: 80px;
-  }
-  .h-full {
-    height: 100%;
-  }
-  .h-px {
-    height: 1px;
-  }
-  .w-0 {
-    width: calc(var(--spacing) * 0);
-  }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
-  .w-1\.5 {
-    width: calc(var(--spacing) * 1.5);
-  }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
-  .w-2\.5 {
-    width: calc(var(--spacing) * 2.5);
-  }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
-  }
-  .w-4 {
-    width: calc(var(--spacing) * 4);
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
-  }
-  .w-8 {
-    width: calc(var(--spacing) * 8);
-  }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
-  }
-  .w-14 {
-    width: calc(var(--spacing) * 14);
-  }
-  .w-16 {
-    width: calc(var(--spacing) * 16);
-  }
-  .w-18 {
-    width: calc(var(--spacing) * 18);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-  .w-24 {
-    width: calc(var(--spacing) * 24);
-  }
-  .w-28 {
-    width: calc(var(--spacing) * 28);
-  }
-  .w-32 {
-    width: calc(var(--spacing) * 32);
-  }
-  .w-36 {
-    width: calc(var(--spacing) * 36);
-  }
-  .w-40 {
-    width: calc(var(--spacing) * 40);
-  }
-  .w-\[32\%\] {
-    width: 32%;
-  }
-  .w-\[35\%\] {
-    width: 35%;
-  }
-  .w-\[80px\] {
-    width: 80px;
-  }
-  .w-full {
-    width: 100%;
-  }
-  .w-px {
-    width: 1px;
-  }
-  .max-w-\[210mm\] {
-    max-width: 210mm;
-  }
-  .min-w-0 {
-    min-width: calc(var(--spacing) * 0);
-  }
-  .flex-1 {
-    flex: 1;
-  }
-  .shrink-0 {
-    flex-shrink: 0;
-  }
-  .rotate-45 {
-    rotate: 45deg;
-  }
-  .list-disc {
-    list-style-type: disc;
-  }
-  .list-none {
-    list-style-type: none;
-  }
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .grid-cols-\[140px_1fr\] {
-    grid-template-columns: 140px 1fr;
-  }
-  .flex-wrap {
-    flex-wrap: wrap;
-  }
-  .items-baseline {
-    align-items: baseline;
-  }
-  .items-center {
-    align-items: center;
-  }
-  .items-end {
-    align-items: flex-end;
-  }
-  .items-start {
-    align-items: flex-start;
-  }
-  .justify-between {
-    justify-content: space-between;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
-  .gap-1\.5 {
-    gap: calc(var(--spacing) * 1.5);
-  }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
-  .gap-2\.5 {
-    gap: calc(var(--spacing) * 2.5);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .gap-4 {
-    gap: calc(var(--spacing) * 4);
-  }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
-  }
-  .space-y-0\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 0.5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 0.5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-1 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-1\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-2\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-4 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-6 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .gap-x-1\.5 {
-    column-gap: calc(var(--spacing) * 1.5);
-  }
-  .gap-x-2 {
-    column-gap: calc(var(--spacing) * 2);
-  }
-  .gap-x-3 {
-    column-gap: calc(var(--spacing) * 3);
-  }
-  .gap-x-4 {
-    column-gap: calc(var(--spacing) * 4);
-  }
-  .gap-x-6 {
-    column-gap: calc(var(--spacing) * 6);
-  }
-  .gap-x-8 {
-    column-gap: calc(var(--spacing) * 8);
-  }
-  .gap-y-0\.5 {
-    row-gap: calc(var(--spacing) * 0.5);
-  }
-  .gap-y-1 {
-    row-gap: calc(var(--spacing) * 1);
-  }
-  .gap-y-1\.5 {
-    row-gap: calc(var(--spacing) * 1.5);
-  }
-  .gap-y-2 {
-    row-gap: calc(var(--spacing) * 2);
-  }
-  .gap-y-3 {
-    row-gap: calc(var(--spacing) * 3);
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
-  }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
-  }
-  .rounded-md {
-    border-radius: var(--radius-md);
-  }
-  .rounded-sm {
-    border-radius: var(--radius-sm);
-  }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
-  .rounded-l-lg {
-    border-top-left-radius: var(--radius-lg);
-    border-bottom-left-radius: var(--radius-lg);
-  }
-  .rounded-r-md {
-    border-top-right-radius: var(--radius-md);
-    border-bottom-right-radius: var(--radius-md);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
-  .border-3 {
-    border-style: var(--tw-border-style);
-    border-width: 3px;
-  }
-  .border-4 {
-    border-style: var(--tw-border-style);
-    border-width: 4px;
-  }
-  .border-\[3px\] {
-    border-style: var(--tw-border-style);
-    border-width: 3px;
-  }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-  }
-  .border-b-2 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 2px;
-  }
-  .border-b-4 {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 4px;
-  }
-  .border-l-2 {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 2px;
-  }
-  .border-l-3 {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 3px;
-  }
-  .border-l-4 {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 4px;
-  }
-  .border-l-\[3px\] {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 3px;
-  }
-  .border-black {
-    border-color: var(--color-black);
-  }
-  .border-white {
-    border-color: var(--color-white);
-  }
-  .border-white\/10 {
-    border-color: color-mix(in srgb, #fff 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-    }
-  }
-  .border-white\/20 {
-    border-color: color-mix(in srgb, #fff 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
-    }
-  }
-  .border-white\/30 {
-    border-color: color-mix(in srgb, #fff 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 30%, transparent);
-    }
-  }
-  .border-white\/40 {
-    border-color: color-mix(in srgb, #fff 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-white) 40%, transparent);
-    }
-  }
-  .border-zinc-100 {
-    border-color: var(--color-zinc-100);
-  }
-  .border-zinc-200 {
-    border-color: var(--color-zinc-200);
-  }
-  .border-zinc-300 {
-    border-color: var(--color-zinc-300);
-  }
-  .border-zinc-800 {
-    border-color: var(--color-zinc-800);
-  }
-  .bg-\[\#27c93f\] {
-    background-color: #27c93f;
-  }
-  .bg-\[\#ff5f56\] {
-    background-color: #ff5f56;
-  }
-  .bg-\[\#ffbd2e\] {
-    background-color: #ffbd2e;
-  }
-  .bg-black {
-    background-color: var(--color-black);
-  }
-  .bg-red-50 {
-    background-color: var(--color-red-50);
-  }
-  .bg-slate-800 {
-    background-color: var(--color-slate-800);
-  }
-  .bg-white {
-    background-color: var(--color-white);
-  }
-  .bg-white\/5 {
-    background-color: color-mix(in srgb, #fff 5%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
-    }
-  }
-  .bg-white\/10 {
-    background-color: color-mix(in srgb, #fff 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-    }
-  }
-  .bg-white\/15 {
-    background-color: color-mix(in srgb, #fff 15%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 15%, transparent);
-    }
-  }
-  .bg-white\/20 {
-    background-color: color-mix(in srgb, #fff 20%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
-    }
-  }
-  .bg-zinc-50 {
-    background-color: var(--color-zinc-50);
-  }
-  .bg-zinc-100 {
-    background-color: var(--color-zinc-100);
-  }
-  .bg-zinc-200 {
-    background-color: var(--color-zinc-200);
-  }
-  .bg-zinc-800 {
-    background-color: var(--color-zinc-800);
-  }
-  .object-cover {
-    object-fit: cover;
-  }
-  .p-0\.5 {
-    padding: calc(var(--spacing) * 0.5);
-  }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
-  .p-2\.5 {
-    padding: calc(var(--spacing) * 2.5);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
-  .p-5 {
-    padding: calc(var(--spacing) * 5);
-  }
-  .p-6 {
-    padding: calc(var(--spacing) * 6);
-  }
-  .p-8 {
-    padding: calc(var(--spacing) * 8);
-  }
-  .p-\[2px\] {
-    padding: 2px;
-  }
-  .p-\[3px\] {
-    padding: 3px;
-  }
-  .px-1\.5 {
-    padding-inline: calc(var(--spacing) * 1.5);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-2\.5 {
-    padding-inline: calc(var(--spacing) * 2.5);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
-  }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
-  }
-  .px-10 {
-    padding-inline: calc(var(--spacing) * 10);
-  }
-  .py-0\.5 {
-    padding-block: calc(var(--spacing) * 0.5);
-  }
-  .py-1 {
-    padding-block: calc(var(--spacing) * 1);
-  }
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
-  }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
-  .py-8 {
-    padding-block: calc(var(--spacing) * 8);
-  }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
-  }
-  .py-px {
-    padding-block: 1px;
-  }
-  .pt-0\.5 {
-    padding-top: calc(var(--spacing) * 0.5);
-  }
-  .pt-3 {
-    padding-top: calc(var(--spacing) * 3);
-  }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-6 {
-    padding-top: calc(var(--spacing) * 6);
-  }
-  .pb-0\.5 {
-    padding-bottom: calc(var(--spacing) * 0.5);
-  }
-  .pb-1 {
-    padding-bottom: calc(var(--spacing) * 1);
-  }
-  .pb-1\.5 {
-    padding-bottom: calc(var(--spacing) * 1.5);
-  }
-  .pb-2 {
-    padding-bottom: calc(var(--spacing) * 2);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
-  }
-  .pb-5 {
-    padding-bottom: calc(var(--spacing) * 5);
-  }
-  .pb-6 {
-    padding-bottom: calc(var(--spacing) * 6);
-  }
-  .pl-3 {
-    padding-left: calc(var(--spacing) * 3);
-  }
-  .pl-3\.5 {
-    padding-left: calc(var(--spacing) * 3.5);
-  }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
-  }
-  .pl-5 {
-    padding-left: calc(var(--spacing) * 5);
-  }
-  .pl-6 {
-    padding-left: calc(var(--spacing) * 6);
-  }
-  .text-center {
-    text-align: center;
-  }
-  .text-left {
-    text-align: left;
-  }
-  .text-right {
-    text-align: right;
-  }
-  .indent-8 {
-    text-indent: calc(var(--spacing) * 8);
-  }
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-  .text-\[9px\] {
-    font-size: 9px;
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
-  .text-\[11px\] {
-    font-size: 11px;
-  }
-  .text-\[13px\] {
-    font-size: 13px;
-  }
-  .leading-loose {
-    --tw-leading: var(--leading-loose);
-    line-height: var(--leading-loose);
-  }
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
-  }
-  .leading-relaxed {
-    --tw-leading: var(--leading-relaxed);
-    line-height: var(--leading-relaxed);
-  }
-  .font-black {
-    --tw-font-weight: var(--font-weight-black);
-    font-weight: var(--font-weight-black);
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
-  .font-extrabold {
-    --tw-font-weight: var(--font-weight-extrabold);
-    font-weight: var(--font-weight-extrabold);
-  }
-  .font-light {
-    --tw-font-weight: var(--font-weight-light);
-    font-weight: var(--font-weight-light);
-  }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
-  .font-normal {
-    --tw-font-weight: var(--font-weight-normal);
-    font-weight: var(--font-weight-normal);
-  }
-  .font-semibold {
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
-  }
-  .tracking-\[0\.2em\] {
-    --tw-tracking: 0.2em;
-    letter-spacing: 0.2em;
-  }
-  .tracking-\[0\.3em\] {
-    --tw-tracking: 0.3em;
-    letter-spacing: 0.3em;
-  }
-  .tracking-\[0\.15em\] {
-    --tw-tracking: 0.15em;
-    letter-spacing: 0.15em;
-  }
-  .tracking-\[0\.25em\] {
-    --tw-tracking: 0.25em;
-    letter-spacing: 0.25em;
-  }
-  .tracking-tight {
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
-  }
-  .tracking-wide {
-    --tw-tracking: var(--tracking-wide);
-    letter-spacing: var(--tracking-wide);
-  }
-  .tracking-wider {
-    --tw-tracking: var(--tracking-wider);
-    letter-spacing: var(--tracking-wider);
-  }
-  .tracking-widest {
-    --tw-tracking: var(--tracking-widest);
-    letter-spacing: var(--tracking-widest);
-  }
-  .break-all {
-    word-break: break-all;
-  }
-  .text-black {
-    color: var(--color-black);
-  }
-  .text-blue-100 {
-    color: var(--color-blue-100);
-  }
-  .text-blue-200 {
-    color: var(--color-blue-200);
-  }
-  .text-blue-300 {
-    color: var(--color-blue-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-600 {
-    color: var(--color-gray-600);
-  }
-  .text-red-100 {
-    color: var(--color-red-100);
-  }
-  .text-red-100\/80 {
-    color: color-mix(in srgb, oklch(93.6% 0.032 17.717) 80%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-red-100) 80%, transparent);
-    }
-  }
-  .text-slate-400 {
-    color: var(--color-slate-400);
-  }
-  .text-slate-500 {
-    color: var(--color-slate-500);
-  }
-  .text-slate-600 {
-    color: var(--color-slate-600);
-  }
-  .text-white {
-    color: var(--color-white);
-  }
-  .text-white\/30 {
-    color: color-mix(in srgb, #fff 30%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-white) 30%, transparent);
-    }
-  }
-  .text-white\/60 {
-    color: color-mix(in srgb, #fff 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-white) 60%, transparent);
-    }
-  }
-  .text-white\/70 {
-    color: color-mix(in srgb, #fff 70%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-white) 70%, transparent);
-    }
-  }
-  .text-white\/80 {
-    color: color-mix(in srgb, #fff 80%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-white) 80%, transparent);
-    }
-  }
-  .text-zinc-200 {
-    color: var(--color-zinc-200);
-  }
-  .text-zinc-300 {
-    color: var(--color-zinc-300);
-  }
-  .text-zinc-400 {
-    color: var(--color-zinc-400);
-  }
-  .text-zinc-500 {
-    color: var(--color-zinc-500);
-  }
-  .text-zinc-600 {
-    color: var(--color-zinc-600);
-  }
-  .text-zinc-700 {
-    color: var(--color-zinc-700);
-  }
-  .text-zinc-800 {
-    color: var(--color-zinc-800);
-  }
-  .text-zinc-900 {
-    color: var(--color-zinc-900);
-  }
-  .uppercase {
-    text-transform: uppercase;
-  }
-  .italic {
-    font-style: italic;
-  }
-  .opacity-10 {
-    opacity: 10%;
-  }
-  .opacity-20 {
-    opacity: 20%;
-  }
-  .opacity-30 {
-    opacity: 30%;
-  }
-  .shadow-lg {
-    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-sm {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-xl {
-    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .filter {
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false;
-}
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        background: rgba(10, 15, 27, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
 
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-space-y-reverse: 0;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
-    }
-  }
+      .hero {
+        padding: 72px 0 36px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+      .hero-main {
+        padding: 40px;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(96, 165, 250, 0.28);
+        background: rgba(96, 165, 250, 0.1);
+        color: #bfdbfe;
+        font-size: 0.9rem;
+      }
+      h1 {
+        font-size: clamp(2.3rem, 4.6vw, 4rem);
+        line-height: 1.06;
+        margin: 18px 0 12px;
+      }
+      .gradient {
+        background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .hero-text {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 60ch;
+      }
+      .actions {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 14px;
+        font-weight: 700;
+        transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #0891b2);
+        color: white;
+      }
+      .btn-secondary {
+        border: 1px solid var(--line);
+        color: var(--text);
+        background: rgba(255,255,255,0.03);
+      }
 
-</style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; display: flex; justify-content: center; padding: 40px 20px; background: #f4f4f5; min-height: 100vh; }
-    @media print { body { padding: 0 !important; background: white !important; } .resume-export > div { box-shadow: none !important; } }
-    
-    .resume-export > div {
-      font-family: Inter, 'Noto Sans SC', sans-serif !important;
-      line-height: 1.5 !important;
-      
-      --base-body-size: 14px;
-      --base-h1-size: 26px;
-      --base-h2-size: 17px;
-      --base-h3-size: 15px;
-      --base-line-spacing: 1.5;
-      --base-section-spacing: 16px;
-      --base-margin-top: 20px;
-      --base-margin-right: 20px;
-      --base-margin-bottom: 20px;
-      --base-margin-left: 20px;
-      --needs-padding: 0;
-    }
-    .resume-export p, .resume-export li, .resume-export span, .resume-export td, .resume-export a, .resume-export div {
-      font-size: 14px !important;
-      line-height: 1.5 !important;
-    }
-    .resume-export h1:not([style*="color"]) { color: #1a1a1a !important; font-size: 26px !important; line-height: 1.5 !important; }
-    .resume-export h1[style*="color"] { font-size: 26px !important; line-height: 1.5 !important; }
-    .resume-export h2:not([style*="color"]) { color: #1a1a1a !important; font-size: 17px !important; line-height: 1.5 !important; border-color: #3b82f6 !important; }
-    .resume-export h2[style*="color"] { font-size: 17px !important; line-height: 1.5 !important; border-color: #3b82f6 !important; }
-    .resume-export h3:not([style*="color"]) { color: #1a1a1a !important; font-size: 15px !important; line-height: 1.5 !important; }
-    .resume-export h3[style*="color"] { font-size: 15px !important; line-height: 1.5 !important; }
-    .resume-export [class*="border-b-2"], .resume-export [class*="border-b-"] { border-color: #3b82f6 !important; }
-    .resume-export [class*="bg-blue-"], .resume-export [class*="bg-indigo-"],
-    .resume-export [class*="bg-slate-800"], .resume-export [class*="bg-zinc-800"],
-    .resume-export [class*="bg-teal-"], .resume-export [class*="bg-emerald-"] {
-      background-color: #3b82f6 !important;
-    }
-    .resume-export [data-section] { padding-bottom: 16px !important; }
-    
-    .resume-export [style*="background"][style*="#"] h1:not([style*="color"]),
-    .resume-export [style*="background"][style*="#"] h2:not([style*="color"]),
-    .resume-export [style*="background"][style*="#"] h3:not([style*="color"]),
-    .resume-export [style*="background"][style*="rgb"] h1:not([style*="color"]),
-    .resume-export [style*="background"][style*="rgb"] h2:not([style*="color"]),
-    .resume-export [style*="background"][style*="rgb"] h3:not([style*="color"]),
-    .resume-export [style*="background"][style*="linear-gradient"] h1:not([style*="color"]),
-    .resume-export [style*="background"][style*="linear-gradient"] h2:not([style*="color"]),
-    .resume-export [style*="background"][style*="linear-gradient"] h3:not([style*="color"]),
-    .resume-export .bg-black h1:not([style*="color"]),
-    .resume-export .bg-black h2:not([style*="color"]),
-    .resume-export .bg-black h3:not([style*="color"]) {
-      color: #ffffff !important;
-    }
-  
-    
-    /* Tailwind v4 uses calc(infinity * 1px) for rounded-full which may fail
-       in some Chromium PDF rendering — use safe 9999px fallback */
-    .resume-export .rounded-full { border-radius: 9999px !important; }
-    /* Avatar style overrides — export templates hardcode rounded-full + equal w/h.
-       Override to match the preview's AvatarImage component for each style. */
-    /* oneInch: portrait rectangle (5:7) with small radius */
-    .resume-export[data-avatar-style="oneInch"] img[class*="object-cover"] {
-      border-radius: 4px !important;
-      aspect-ratio: 5 / 7 !important;
-      height: auto !important;
-      max-height: none !important;
-    }
-    .resume-export[data-avatar-style="oneInch"] div:has(> img[class*="object-cover"]) {
-      border-radius: 4px !important;
-      height: auto !important;
-      overflow: hidden !important;
-    }
-    /* circle: equal w/h with full rounding — use 9999px as safe fallback
-       for Tailwind v4's calc(infinity * 1px) which may fail in some Chromium builds */
-    .resume-export[data-avatar-style="circle"] img[class*="object-cover"] {
-      border-radius: 9999px !important;
-      aspect-ratio: 1 / 1 !important;
-    }
-    .resume-export[data-avatar-style="circle"] div:has(> img[class*="object-cover"]) {
-      border-radius: 9999px !important;
-      overflow: hidden !important;
-    }
-  </style>
-</head>
-<body>
-  <div class="resume-export" data-avatar-style="oneInch">
-    <div class="mx-auto max-w-[210mm] bg-white shadow-lg" style="font-family:'JetBrains Mono','Fira Code',monospace">
-    <div class="px-8 py-6" style="background:#282c34">
-      <div class="mb-3 flex items-center gap-1.5">
-        <div class="h-3 w-3 rounded-full bg-[#ff5f56]"></div>
-        <div class="h-3 w-3 rounded-full bg-[#ffbd2e]"></div>
-        <div class="h-3 w-3 rounded-full bg-[#27c93f]"></div>
-        <span class="ml-3 text-xs text-zinc-500">~/resume</span>
-      </div>
-      <div class="flex items-center gap-4">
-        <img src="data:image/jpeg;base64,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" alt="" class="h-16 w-16 shrink-0 rounded-lg object-cover"/>
-        <div>
-          <h1 class="text-2xl font-bold" style="color:#98c379">杨栋森</h1>
-          <p class="mt-0.5 text-sm" style="color:#61afef">// Linux 运维 / DevOps / 平台方向实习</p>
-          <div class="mt-2 flex flex-wrap gap-3 text-xs text-zinc-400"><span>CET4</span><span>YangYuS8@163.com</span><span>18683236881</span><span>四川省成都市</span><span>https://blog.yangyus8.top</span></div>
+      .hero-side {
+        padding: 28px;
+        display: grid;
+        gap: 14px;
+      }
+      .stat {
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+      }
+      .stat-label { color: var(--muted); font-size: 0.88rem; }
+      .stat-value { font-size: 1.35rem; font-weight: 800; margin-top: 6px; }
+      .stat small { color: #c7d5f0; }
+
+      section {
+        padding: 18px 0 10px;
+      }
+      .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+      .section-title h2 {
+        margin: 0;
+        font-size: 1.45rem;
+      }
+      .section-title p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .panel {
+        padding: 24px;
+      }
+      .panel p { color: var(--muted); }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .chip {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+        font-size: 0.92rem;
+        color: #dbe7ff;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 16px;
+      }
+      .item {
+        padding: 22px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+      }
+      .item-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+      .item-head h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+      .period {
+        color: var(--muted);
+        font-size: 0.92rem;
+        white-space: nowrap;
+      }
+      .subline {
+        margin-top: 6px;
+        color: #bfdbfe;
+        font-size: 0.95rem;
+      }
+      ul.clean {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      ul.clean li { margin-bottom: 8px; }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .project {
+        padding: 22px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+      }
+      .project h3 { margin: 0 0 8px; }
+      .project p { margin: 0; color: var(--muted); }
+      .project .meta {
+        margin-top: 12px;
+        color: #bfdbfe;
+        font-size: 0.92rem;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 20px;
+      }
+      .contact-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .contact-item {
+        padding: 16px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+      }
+      .contact-item strong { display: block; margin-bottom: 4px; }
+      .footer {
+        padding: 28px 0 48px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .grid-2,
+        .project-grid,
+        .contact {
+          grid-template-columns: 1fr;
+        }
+        .hero-main, .hero-side, .panel { padding: 24px; }
+        .nav-links { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top">YANG YU S8</a>
+        <div class="nav-links">
+          <a href="#about">关于我</a>
+          <a href="#skills">技能</a>
+          <a href="#experience">经历</a>
+          <a href="#projects">项目</a>
+          <a href="#contact">联系</a>
         </div>
       </div>
-    </div>
-    <div class="p-8">
-      <div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 个人简介</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="text-sm leading-relaxed text-zinc-600">辽宁科技大学网络工程专业本科生，长期使用 Linux，熟悉服务器基础管理、开发环境配置、容器化部署与常见问题排查。具备 Docker、Nginx、Proxmox VE 等实践经验，能够参与服务部署、环境维护、日志分析和故障定位。具备一定 Python / Go / Shell 能力，期望在 Linux 运维、DevOps 或平台工程方向积累实习经验。</div>
+    </nav>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-grid">
+          <div class="card hero-main">
+            <div class="eyebrow">云原生 / DevOps 实习生</div>
+            <h1>你好，我是 <span class="gradient">杨栋森</span></h1>
+            <p class="hero-text">
+              辽宁科技大学网络工程专业 2027 届本科生，关注 Linux 运维、容器化部署与云原生方向。
+              我擅长把想法真正落到线上环境里：从环境配置、服务部署、问题排查，到 AI 辅助开发流程下的系统集成与工程化交付。
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#contact">联系我</a>
+              <a class="btn btn-secondary" href="https://github.com/YangYuS8" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn btn-secondary" href="https://blog.yangyus8.top" target="_blank" rel="noreferrer">Blog</a>
+            </div>
+          </div>
+
+          <div class="card hero-side">
+            <div class="stat">
+              <div class="stat-label">当前方向</div>
+              <div class="stat-value">云原生 / DevOps</div>
+              <small>Linux、容器化部署、工程化落地</small>
+            </div>
+            <div class="stat">
+              <div class="stat-label">代表项目</div>
+              <div class="stat-value">YOLOv12 害虫检测平台</div>
+              <small>已获软著登记 · 软著登字第17611300号</small>
+            </div>
+            <div class="stat">
+              <div class="stat-label">开源项目</div>
+              <div class="stat-value">wayvid / yolopest</div>
+              <small>关注 Rust、AI 应用落地与系统集成</small>
+            </div>
+          </div>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 教育背景</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-3"><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">工学学士 - 网络工程</span><span class="text-sm text-zinc-500"> — 辽宁科技大学</span></div><span class="shrink-0 text-xs text-zinc-400">2022-09 – 2027-07</span></div>
-      
-      <ul class="mt-1 space-y-0.5"><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>主修：计算机网络、操作系统、数据结构、数据库系统、信息安全</li><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>持续进行 Linux、容器化部署与开发环境实践</li></ul>
-    </div></div>
+      </section>
+
+      <section id="about" class="container">
+        <div class="section-title">
+          <h2>关于我</h2>
+          <p>不只写代码，更关注系统能否稳定跑起来。</p>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 技能特长</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-2"><div><span class="text-xs font-bold" style="color:#e5c07b">Linux 与系统环境: </span><span class="text-sm text-zinc-600">Linux 基础管理、环境配置、日志查看、基础网络排查</span></div><div><span class="text-xs font-bold" style="color:#e5c07b">容器化与部署: </span><span class="text-sm text-zinc-600">Docker、Docker Compose、Podman、Nginx</span></div><div><span class="text-xs font-bold" style="color:#e5c07b">虚拟化与平台实践: </span><span class="text-sm text-zinc-600">PVE、Tailscale、WireGuard</span></div><div><span class="text-xs font-bold" style="color:#e5c07b">编程与脚本: </span><span class="text-sm text-zinc-600">Python、Go、Shell</span></div><div><span class="text-xs font-bold" style="color:#e5c07b">开发协作: </span><span class="text-sm text-zinc-600">了解 FastAPI、Gin，具备基础前后端项目联调与部署经验</span></div></div>
+        <div class="grid-2">
+          <div class="card panel">
+            <p>
+              我更适合被描述成一个偏工程交付和基础设施方向的学生开发者。
+              比起单纯追求“写了多少业务代码”，我更关心的是系统怎么部署、怎么维护、怎么在实际环境里稳定运行。
+            </p>
+            <p>
+              过去做项目时，我经常借助 AI 提高原型开发和功能落地效率，但真正让我有成就感的部分，通常是服务部署、链路打通、环境调优和把一整套东西收拾顺手。
+            </p>
+          </div>
+          <div class="card panel">
+            <p><strong>教育背景</strong></p>
+            <p>辽宁科技大学 · 网络工程（本科）</p>
+            <p>2022.09 - 2027.07</p>
+            <div class="chips">
+              <span class="chip">CET-4</span>
+              <span class="chip">计算机网络</span>
+              <span class="chip">操作系统</span>
+              <span class="chip">信息安全</span>
+              <span class="chip">数据库系统</span>
+              <span class="chip">Web 开发</span>
+            </div>
+          </div>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 运维实践</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-3"><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34"></span></div></div>
-      <div class="mt-1 text-sm text-zinc-600">协助导师完成实验室 Ubuntu 22 服务器的部署与维护，参与基础环境配置与日常运行支持，保障实验环境稳定可用</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34"></span></div></div>
-      <div class="mt-1 text-sm text-zinc-600">能独立搭建 Python 深度学习运行环境，熟悉 conda、venv、uv 等环境管理方式及常见依赖处理</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34"></span></div></div>
-      <div class="mt-1 text-sm text-zinc-600">熟悉 Docker、Docker Compose、Podman 的部署与使用，能够完成镜像管理、容器运行、代理与镜像源配置，以及 Compose 编排文件编写</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34"></span></div></div>
-      <div class="mt-1 text-sm text-zinc-600">具备 Nginx 反向代理、静态网页部署经验，熟悉 1Panel 的基础使用与服务管理</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34"></span></div></div>
-      <div class="mt-1 text-sm text-zinc-600">搭建并维护个人 PVE 虚拟化环境，实践过 Tailscale、WireGuard 等远程组网工具的部署与使用，用于系统测试、服务部署与远程访问实践</div>
-    </div></div>
+      </section>
+
+      <section id="skills" class="container">
+        <div class="section-title">
+          <h2>技能栈</h2>
+          <p>更偏系统、部署、工程实践，而不是只停留在框架层面。</p>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 项目经历</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-4"><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">YOLO 害虫检测平台</span></div><span class="shrink-0 rounded px-2 py-0.5 text-[10px] font-medium" style="background:#f0f0f0;color:#636d83">2025-03 – 2025-09</span></div>
-      <div class="mt-1 text-sm text-zinc-600">面向目标检测场景的 Web 平台项目，主要参与模型服务与前后端系统的本地部署、联调及工程落地。</div>
-      <p class="mt-0.5 text-xs" style="color:#61afef">技术栈: Docker | Python/FastAPI | YOLOv12 | Redis | OpenCV | React / TypeScript</p>
-      <ul class="mt-1 space-y-0.5"><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>参与害虫检测平台的搭建与落地，完成模型服务与 Web 服务的本地运行、测试与联调</li><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>使用 Docker 对项目运行环境进行整理，提升项目部署与复现效率</li><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>参与后端接口调试、前后端联调及基础功能验证，协助完成平台可用版本交付</li><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>在项目推进过程中负责 Linux 环境配置、依赖处理、服务启动排查等工作</li><li class="flex items-start gap-2 text-sm text-zinc-600"><span class="mt-1 shrink-0 text-xs" style="color:#98c379">$</span>项目最终形成可演示的平台成果，并完成相关软著申请材料整理（证书号：软著登字第17611300号）</li></ul>
-    </div></div>
+        <div class="grid-2">
+          <div class="card panel">
+            <h3>系统与部署</h3>
+            <div class="chips">
+              <span class="chip">Linux</span>
+              <span class="chip">Shell</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Docker Compose</span>
+              <span class="chip">Nginx</span>
+              <span class="chip">Kubernetes 基础</span>
+              <span class="chip">Proxmox VE</span>
+              <span class="chip">GitHub Actions</span>
+            </div>
+          </div>
+          <div class="card panel">
+            <h3>开发与集成</h3>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Go</span>
+              <span class="chip">JavaScript / TypeScript</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Gin</span>
+              <span class="chip">React</span>
+              <span class="chip">Next.js</span>
+              <span class="chip">Rust（了解）</span>
+            </div>
+          </div>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; GITHUB 项目</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-3"><div>
-      <div class="flex items-baseline justify-between"><span class="text-sm font-bold" style="color:#282c34">YangYuS8/wayvid</span><span class="shrink-0 text-xs text-zinc-400">⭐ 106</span></div>
-      <span class="text-xs" style="color:#61afef">Rust</span>
-      <div class="mt-1 text-sm text-zinc-600">Wayland 动态视频壁纸项目，体现 Linux 桌面生态与工程实现兴趣</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><span class="text-sm font-bold" style="color:#282c34">YangYuS8/yolojunk</span><span class="shrink-0 text-xs text-zinc-400">⭐ 2</span></div>
-      <span class="text-xs" style="color:#61afef">Python</span>
-      <div class="mt-1 text-sm text-zinc-600">基于 FastAPI 与 YOLO 的可回收物检测服务</div>
-    </div></div>
+      </section>
+
+      <section id="experience" class="container">
+        <div class="section-title">
+          <h2>项目经历</h2>
+          <p>我更喜欢讲“怎么落地”，而不是只讲“用了什么框架”。</p>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 论文成果</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-3"><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">Steel Surface Defect Detection Based on YOLOv12</span></div><span class="shrink-0 text-xs text-zinc-400">2025</span></div>
-      <div class="mt-1 text-sm text-zinc-600">Engineering Letters，主要作者之一，负责实验环境部署、运行优化与部分数据处理</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">DLFE-YOLO: an enhanced framework for underwater object detection based on YOLOv8</span></div><span class="shrink-0 text-xs text-zinc-400">2025</span></div>
-      <div class="mt-1 text-sm text-zinc-600">Intelligent Marine Technology and Systems，zhu yao作者之一，负责实验环境部署与运行优化</div>
-    </div></div>
+        <div class="card panel timeline">
+          <div class="item">
+            <div class="item-head">
+              <h3>智慧驱动的稻田虫害检测系统 · 项目负责人</h3>
+              <div class="period">2025.03 - 2025.05</div>
+            </div>
+            <div class="subline">FastAPI / React 18 / TypeScript / YOLOv12 / Docker / Redis / OpenCV</div>
+            <ul class="clean">
+              <li>负责整体技术落地与系统集成，打通 AI 检测服务、前后端系统与部署环境。</li>
+              <li>基于 FastAPI 构建后端服务，完成图像 / 视频输入、结果返回与历史记录管理流程。</li>
+              <li>完成 Docker 容器化部署，提升环境一致性、迁移效率与交付速度。</li>
+              <li>参与异步任务处理、运行调试与性能优化，推动项目从原型走向可演示可交付状态。</li>
+              <li>项目已获计算机软件著作权登记（软著登字第17611300号）。</li>
+            </ul>
+          </div>
         </div>
-      </div><div class="mb-6" data-section>
-        <h2 class="mb-2 text-sm font-bold" style="color:#e5c07b">&gt; 奖项荣誉</h2>
-        <div class="border-l-2 pl-4" style="border-color:#3e4451">
-          <div class="space-y-3"><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">第三届中国高校大数据挑战赛</span></div><span class="shrink-0 text-xs text-zinc-400">2023年</span></div>
-      <div class="mt-1 text-sm text-zinc-600">荣获国家级三等奖（证书编号：bdc230498）</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">辽宁省大学生智能技术应用大赛</span></div><span class="shrink-0 text-xs text-zinc-400">2024年</span></div>
-      <div class="mt-1 text-sm text-zinc-600">荣获省级一等奖（证书编号：20241351120092）</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">辽宁科技大学优秀学生三等奖学金</span></div><span class="shrink-0 text-xs text-zinc-400">2025年</span></div>
-      <div class="mt-1 text-sm text-zinc-600">获得三等奖学金，表彰在校期间优秀的学术表现（证书编号：2025011827）</div>
-    </div><div>
-      <div class="flex items-baseline justify-between"><div><span class="text-sm font-bold" style="color:#282c34">以及省级二等奖/三等奖若干</span></div></div>
-      
-    </div></div>
+      </section>
+
+      <section id="projects" class="container">
+        <div class="section-title">
+          <h2>开源项目</h2>
+          <p>一些能代表我技术兴趣和工程表达方式的项目。</p>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</body>
+        <div class="project-grid">
+          <article class="project">
+            <h3>wayvid</h3>
+            <p>面向 Wayland 的视频动态壁纸引擎，优先适配 Hyprland 与 niri，兼容 Wallpaper Engine 的视频参数。</p>
+            <div class="meta">Rust · GitHub ⭐ 103</div>
+          </article>
+          <article class="project">
+            <h3>yolopest</h3>
+            <p>基于 YOLOv12 的智能虫害检测系统，包含 FastAPI 后端与 React 前端，支持图像 / 视频检测与结果管理。</p>
+            <div class="meta">Python · GitHub ⭐ 51</div>
+          </article>
+          <article class="project">
+            <h3>yolojunk</h3>
+            <p>基于 FastAPI + YOLO 的可回收物检测服务，前端使用 Next.js 15 + Tailwind CSS，由后端统一托管。</p>
+            <div class="meta">Python · AI 应用落地</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="section-title">
+          <h2>奖项与证明</h2>
+          <p>保留最有识别度的几项，不把页面堆成奖状墙。</p>
+        </div>
+        <div class="card panel">
+          <div class="chips">
+            <span class="chip">中国高校大数据挑战赛 · 国家级三等奖（2023）</span>
+            <span class="chip">辽宁省大学生智能技术应用大赛 · 省级一等奖（2024）</span>
+            <span class="chip">中软国际—卓越杯大数据挑战赛 · 省级二等奖（2024）</span>
+            <span class="chip">辽宁省 iCAN 创新创业大赛 · 省级二等奖（2025）</span>
+            <span class="chip">辽宁科技大学优秀学生三等奖学金（2025）</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="container">
+        <div class="section-title">
+          <h2>联系我</h2>
+          <p>如果你对我的项目、技术方向或实习机会感兴趣，欢迎联系。</p>
+        </div>
+        <div class="contact">
+          <div class="card panel">
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:YangYuS8@163.com">YangYuS8@163.com</a>
+              </div>
+              <div class="contact-item">
+                <strong>GitHub</strong>
+                <a href="https://github.com/YangYuS8" target="_blank" rel="noreferrer">github.com/YangYuS8</a>
+              </div>
+              <div class="contact-item">
+                <strong>Blog</strong>
+                <a href="https://blog.yangyus8.top" target="_blank" rel="noreferrer">blog.yangyus8.top</a>
+              </div>
+              <div class="contact-item">
+                <strong>Phone</strong>
+                <a href="tel:18683236881">18683236881</a>
+              </div>
+            </div>
+          </div>
+          <div class="card panel">
+            <h3 style="margin-top:0;">一句话总结我自己</h3>
+            <p>
+              我不是那种只会在本地跑 demo 的人。
+              我更想成为一个能把服务真正部署起来、能查问题、能收拾环境、能让系统稳定工作的工程方向实习生。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div>© 2026 杨栋森 · Built for GitHub Pages · Domain: yangyus8.top</div>
+    </footer>
+  </body>
 </html>
