@@ -4,296 +4,175 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>杨栋森 · 云原生 / DevOps 实习生</title>
-    <meta
-      name="description"
-      content="杨栋森的个人网站，展示个人简介、技术栈、项目经历、开源项目与联系方式。"
-    />
+    <meta name="description" content="杨栋森的个人主页：云原生 / DevOps 实习方向，展示个人简介、技术栈、项目经历与开源项目。" />
     <link rel="canonical" href="https://yangyus8.top/" />
     <style>
       :root {
-        --bg: #0b1020;
-        --panel: rgba(15, 23, 42, 0.72);
-        --panel-strong: #111827;
-        --text: #e5eefc;
-        --muted: #9fb0d0;
-        --line: rgba(148, 163, 184, 0.18);
+        --bg: #07111f;
+        --bg-2: #0b1728;
+        --panel: rgba(9, 17, 31, 0.72);
+        --panel-2: rgba(17, 24, 39, 0.82);
+        --text: #eaf2ff;
+        --muted: #9db0d3;
+        --line: rgba(148, 163, 184, 0.16);
         --brand: #60a5fa;
         --brand-2: #22d3ee;
+        --brand-3: #8b5cf6;
         --ok: #34d399;
-        --shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
-        --max: 1120px;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+        --max: 1160px;
       }
-
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 28%),
-          radial-gradient(circle at top right, rgba(96, 165, 250, 0.14), transparent 28%),
-          linear-gradient(180deg, #0b1020 0%, #0a0f1b 100%);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: var(--text);
-        line-height: 1.6;
+        line-height: 1.65;
+        background:
+          radial-gradient(circle at 0% 0%, rgba(96,165,250,0.18), transparent 28%),
+          radial-gradient(circle at 100% 0%, rgba(34,211,238,0.14), transparent 24%),
+          radial-gradient(circle at 50% 100%, rgba(139,92,246,0.12), transparent 28%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       }
-
       a { color: inherit; text-decoration: none; }
-      img { max-width: 100%; display: block; }
       .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-
       .nav {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(14px);
-        background: rgba(10, 15, 27, 0.72);
+        position: sticky; top: 0; z-index: 40;
+        backdrop-filter: blur(16px);
+        background: rgba(7, 17, 31, 0.66);
         border-bottom: 1px solid var(--line);
       }
       .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: flex; align-items: center; justify-content: space-between;
         padding: 14px 0;
       }
-      .brand {
-        font-weight: 800;
-        letter-spacing: 0.04em;
-      }
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
+      .brand { font-weight: 900; letter-spacing: 0.12em; font-size: .92rem; }
+      .nav-links { display: flex; gap: 18px; color: var(--muted); font-size: .95rem; }
+      .nav-links a:hover { color: var(--text); }
 
-      .hero {
-        padding: 72px 0 36px;
+      .hero { padding: 78px 0 34px; position: relative; overflow: hidden; }
+      .hero::before, .hero::after {
+        content: ""; position: absolute; border-radius: 999px; filter: blur(60px); pointer-events: none;
+      }
+      .hero::before { width: 300px; height: 300px; background: rgba(96,165,250,.18); top: 10px; left: -60px; animation: float 8s ease-in-out infinite; }
+      .hero::after { width: 240px; height: 240px; background: rgba(34,211,238,.16); top: 20px; right: -40px; animation: float 10s ease-in-out infinite reverse; }
+      @keyframes float {
+        0%,100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(12px) translateX(8px); }
       }
       .hero-grid {
-        display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
-        gap: 28px;
-        align-items: stretch;
+        display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch;
       }
       .card {
         background: var(--panel);
         border: 1px solid var(--line);
-        border-radius: 24px;
+        border-radius: 26px;
         box-shadow: var(--shadow);
       }
-      .hero-main {
-        padding: 40px;
+      .hero-main { padding: 40px; position: relative; }
+      .badge {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 8px 12px; border-radius: 999px;
+        background: rgba(96,165,250,.12); border: 1px solid rgba(96,165,250,.3);
+        color: #cfe2ff; font-size: .9rem;
       }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(96, 165, 250, 0.28);
-        background: rgba(96, 165, 250, 0.1);
-        color: #bfdbfe;
-        font-size: 0.9rem;
-      }
-      h1 {
-        font-size: clamp(2.3rem, 4.6vw, 4rem);
-        line-height: 1.06;
-        margin: 18px 0 12px;
-      }
+      h1 { font-size: clamp(2.5rem, 5vw, 4.3rem); line-height: 1.04; margin: 18px 0 14px; }
       .gradient {
-        background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        background: linear-gradient(90deg, var(--brand), var(--brand-2), var(--brand-3));
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
-      .hero-text {
-        color: var(--muted);
-        font-size: 1.05rem;
-        max-width: 60ch;
-      }
-      .actions {
-        margin-top: 24px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
+      .lead { color: var(--muted); font-size: 1.06rem; max-width: 60ch; }
+      .actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
       .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 18px;
-        border-radius: 14px;
-        font-weight: 700;
-        transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 12px 18px; border-radius: 14px; font-weight: 700;
+        transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
       }
-      .btn:hover { transform: translateY(-1px); }
-      .btn-primary {
-        background: linear-gradient(135deg, #2563eb, #0891b2);
-        color: white;
-      }
-      .btn-secondary {
-        border: 1px solid var(--line);
-        color: var(--text);
-        background: rgba(255,255,255,0.03);
-      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary { background: linear-gradient(135deg, #2563eb, #0891b2); color: #fff; }
+      .btn-secondary { border: 1px solid var(--line); background: rgba(255,255,255,.03); }
 
-      .hero-side {
-        padding: 28px;
-        display: grid;
-        gap: 14px;
+      .hero-side { padding: 24px; display: grid; gap: 14px; }
+      .profile-box {
+        padding: 22px; border-radius: 20px;
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        border: 1px solid var(--line);
       }
+      .avatar {
+        width: 72px; height: 72px; border-radius: 22px;
+        background: linear-gradient(135deg, #2563eb, #8b5cf6);
+        display: grid; place-items: center; font-size: 1.6rem; font-weight: 900;
+        margin-bottom: 14px;
+      }
+      .muted { color: var(--muted); }
+      .hero-stats { display: grid; gap: 12px; }
       .stat {
-        padding: 18px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.03);
-        border: 1px solid var(--line);
+        padding: 16px 18px; border-radius: 18px;
+        background: rgba(255,255,255,.03); border: 1px solid var(--line);
       }
-      .stat-label { color: var(--muted); font-size: 0.88rem; }
-      .stat-value { font-size: 1.35rem; font-weight: 800; margin-top: 6px; }
-      .stat small { color: #c7d5f0; }
+      .stat strong { display: block; font-size: 1.2rem; margin-top: 4px; }
 
-      section {
-        padding: 18px 0 10px;
-      }
-      .section-title {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 18px;
-      }
-      .section-title h2 {
-        margin: 0;
-        font-size: 1.45rem;
-      }
-      .section-title p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-      .panel {
-        padding: 24px;
-      }
-      .panel p { color: var(--muted); }
-
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 16px;
-      }
+      section { padding: 18px 0 10px; }
+      .section-title { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+      .section-title h2 { margin: 0; font-size: 1.5rem; }
+      .section-title p { margin: 0; color: var(--muted); }
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .panel { padding: 24px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
       .chip {
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.03);
-        font-size: 0.92rem;
-        color: #dbe7ff;
+        padding: 8px 12px; border-radius: 999px; border: 1px solid var(--line);
+        background: rgba(255,255,255,.03); font-size: .92rem; color: #dbe7ff;
       }
-
-      .timeline {
-        display: grid;
-        gap: 16px;
-      }
+      .timeline { display: grid; gap: 16px; }
       .item {
-        padding: 22px;
-        border-radius: 20px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.03);
+        padding: 22px; border-radius: 22px; border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
       }
-      .item-head {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        align-items: baseline;
-        flex-wrap: wrap;
-      }
-      .item-head h3 {
-        margin: 0;
-        font-size: 1.08rem;
-      }
-      .period {
-        color: var(--muted);
-        font-size: 0.92rem;
-        white-space: nowrap;
-      }
-      .subline {
-        margin-top: 6px;
-        color: #bfdbfe;
-        font-size: 0.95rem;
-      }
-      ul.clean {
-        margin: 12px 0 0;
-        padding-left: 18px;
-        color: var(--muted);
-      }
+      .item-head { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: baseline; }
+      .item-head h3 { margin: 0; font-size: 1.06rem; }
+      .period { color: var(--muted); font-size: .92rem; white-space: nowrap; }
+      .subline { margin-top: 6px; color: #bfdbfe; font-size: .95rem; }
+      ul.clean { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
       ul.clean li { margin-bottom: 8px; }
 
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
+      .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .project {
-        padding: 22px;
-        border-radius: 20px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.03);
+        padding: 22px; border-radius: 22px; border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
       }
+      .project:hover { transform: translateY(-4px); border-color: rgba(96,165,250,.35); box-shadow: 0 16px 40px rgba(0,0,0,.22); }
       .project h3 { margin: 0 0 8px; }
       .project p { margin: 0; color: var(--muted); }
-      .project .meta {
-        margin-top: 12px;
-        color: #bfdbfe;
-        font-size: 0.92rem;
-      }
+      .project .meta { margin-top: 14px; color: #bfdbfe; font-size: .92rem; }
+      .project .link { display: inline-block; margin-top: 16px; color: #7dd3fc; font-weight: 700; }
 
-      .contact {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 20px;
-      }
-      .contact-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 16px;
-      }
+      .contact { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
+      .contact-list { display: grid; gap: 12px; margin-top: 16px; }
       .contact-item {
-        padding: 16px;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        background: rgba(255,255,255,0.03);
+        padding: 16px; border-radius: 18px; border: 1px solid var(--line);
+        background: rgba(255,255,255,.03);
       }
       .contact-item strong { display: block; margin-bottom: 4px; }
-      .footer {
-        padding: 28px 0 48px;
-        color: var(--muted);
-        font-size: 0.92rem;
-      }
+      .footer { padding: 28px 0 52px; color: var(--muted); font-size: .92rem; }
 
-      @media (max-width: 900px) {
-        .hero-grid,
-        .grid-2,
-        .project-grid,
-        .contact {
-          grid-template-columns: 1fr;
-        }
-        .hero-main, .hero-side, .panel { padding: 24px; }
+      @media (max-width: 980px) {
+        .hero-grid, .grid-2, .project-grid, .contact { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 760px) {
         .nav-links { display: none; }
+        .hero-main, .hero-side, .panel { padding: 22px; }
+        h1 { font-size: 2.5rem; }
       }
     </style>
   </head>
   <body>
     <nav class="nav">
       <div class="container nav-inner">
-        <a class="brand" href="#top">YANG YU S8</a>
+        <a class="brand" href="#top">YANGYUS8.TOP</a>
         <div class="nav-links">
-          <a href="#about">关于我</a>
+          <a href="#about">关于</a>
           <a href="#skills">技能</a>
           <a href="#experience">经历</a>
           <a href="#projects">项目</a>
@@ -306,34 +185,29 @@
       <section class="hero container">
         <div class="hero-grid">
           <div class="card hero-main">
-            <div class="eyebrow">云原生 / DevOps 实习生</div>
+            <div class="badge">云原生 / DevOps 实习生</div>
             <h1>你好，我是 <span class="gradient">杨栋森</span></h1>
-            <p class="hero-text">
+            <p class="lead">
               辽宁科技大学网络工程专业 2027 届本科生，关注 Linux 运维、容器化部署与云原生方向。
-              我擅长把想法真正落到线上环境里：从环境配置、服务部署、问题排查，到 AI 辅助开发流程下的系统集成与工程化交付。
+              我更擅长把系统真正部署起来、调通链路、解决运行问题，而不只是把代码写在本地。
             </p>
             <div class="actions">
               <a class="btn btn-primary" href="#contact">联系我</a>
               <a class="btn btn-secondary" href="https://github.com/YangYuS8" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="btn btn-secondary" href="https://blog.yangyus8.top" target="_blank" rel="noreferrer">Blog</a>
+              <a class="btn btn-secondary" href="https://blog.yangyus8.top" target="_blank" rel="noreferrer">博客</a>
             </div>
           </div>
 
           <div class="card hero-side">
-            <div class="stat">
-              <div class="stat-label">当前方向</div>
-              <div class="stat-value">云原生 / DevOps</div>
-              <small>Linux、容器化部署、工程化落地</small>
+            <div class="profile-box">
+              <div class="avatar">杨</div>
+              <strong style="font-size:1.12rem;">杨栋森</strong>
+              <div class="muted" style="margin-top:6px;">偏工程交付、基础设施与 AI 应用落地方向的学生开发者</div>
             </div>
-            <div class="stat">
-              <div class="stat-label">代表项目</div>
-              <div class="stat-value">YOLOv12 害虫检测平台</div>
-              <small>已获软著登记 · 软著登字第17611300号</small>
-            </div>
-            <div class="stat">
-              <div class="stat-label">开源项目</div>
-              <div class="stat-value">wayvid / yolopest</div>
-              <small>关注 Rust、AI 应用落地与系统集成</small>
+            <div class="hero-stats">
+              <div class="stat"><span class="muted">关注方向</span><strong>Linux · Docker · 云原生</strong></div>
+              <div class="stat"><span class="muted">代表成果</span><strong>YOLOv12 害虫检测平台</strong></div>
+              <div class="stat"><span class="muted">开源项目</span><strong>wayvid / yolopest</strong></div>
             </div>
           </div>
         </div>
@@ -342,29 +216,25 @@
       <section id="about" class="container">
         <div class="section-title">
           <h2>关于我</h2>
-          <p>不只写代码，更关注系统能否稳定跑起来。</p>
+          <p>我更关心系统怎么被真正用起来。</p>
         </div>
         <div class="grid-2">
           <div class="card panel">
-            <p>
-              我更适合被描述成一个偏工程交付和基础设施方向的学生开发者。
-              比起单纯追求“写了多少业务代码”，我更关心的是系统怎么部署、怎么维护、怎么在实际环境里稳定运行。
-            </p>
-            <p>
-              过去做项目时，我经常借助 AI 提高原型开发和功能落地效率，但真正让我有成就感的部分，通常是服务部署、链路打通、环境调优和把一整套东西收拾顺手。
+            <p class="muted">
+              比起把自己包装成“纯后端代码高手”，我更适合被描述成一个偏工程交付和基础设施方向的学生开发者。
+              我常常借助 AI 提高原型开发和模块落地的效率，但真正有价值的部分，在于我能把这些模块整合起来、部署起来、调通并稳定运行。
             </p>
           </div>
           <div class="card panel">
-            <p><strong>教育背景</strong></p>
-            <p>辽宁科技大学 · 网络工程（本科）</p>
-            <p>2022.09 - 2027.07</p>
+            <strong>教育背景</strong>
+            <p style="margin-top:8px;">辽宁科技大学 · 网络工程（本科）</p>
+            <p class="muted">2022.09 - 2027.07</p>
             <div class="chips">
               <span class="chip">CET-4</span>
               <span class="chip">计算机网络</span>
               <span class="chip">操作系统</span>
-              <span class="chip">信息安全</span>
               <span class="chip">数据库系统</span>
-              <span class="chip">Web 开发</span>
+              <span class="chip">信息安全</span>
             </div>
           </div>
         </div>
@@ -373,11 +243,11 @@
       <section id="skills" class="container">
         <div class="section-title">
           <h2>技能栈</h2>
-          <p>更偏系统、部署、工程实践，而不是只停留在框架层面。</p>
+          <p>偏系统、部署、工程实践，不只停留在框架表层。</p>
         </div>
         <div class="grid-2">
           <div class="card panel">
-            <h3>系统与部署</h3>
+            <strong>系统与部署</strong>
             <div class="chips">
               <span class="chip">Linux</span>
               <span class="chip">Shell</span>
@@ -390,7 +260,7 @@
             </div>
           </div>
           <div class="card panel">
-            <h3>开发与集成</h3>
+            <strong>开发与集成</strong>
             <div class="chips">
               <span class="chip">Python</span>
               <span class="chip">Go</span>
@@ -408,10 +278,10 @@
       <section id="experience" class="container">
         <div class="section-title">
           <h2>项目经历</h2>
-          <p>我更喜欢讲“怎么落地”，而不是只讲“用了什么框架”。</p>
+          <p>我更喜欢从“如何落地”和“如何收拾稳定”去讲项目。</p>
         </div>
-        <div class="card panel timeline">
-          <div class="item">
+        <div class="timeline">
+          <div class="card item">
             <div class="item-head">
               <h3>智慧驱动的稻田虫害检测系统 · 项目负责人</h3>
               <div class="period">2025.03 - 2025.05</div>
@@ -430,24 +300,27 @@
 
       <section id="projects" class="container">
         <div class="section-title">
-          <h2>开源项目</h2>
-          <p>一些能代表我技术兴趣和工程表达方式的项目。</p>
+          <h2>项目展示</h2>
+          <p>我挑了几项比较能代表自己技术兴趣和工程表达方式的项目。</p>
         </div>
         <div class="project-grid">
           <article class="project">
             <h3>wayvid</h3>
-            <p>面向 Wayland 的视频动态壁纸引擎，优先适配 Hyprland 与 niri，兼容 Wallpaper Engine 的视频参数。</p>
+            <p>面向 Wayland 的视频动态壁纸引擎，优先适配 Hyprland 与 niri，兼容 Wallpaper Engine 视频参数。</p>
             <div class="meta">Rust · GitHub ⭐ 103</div>
+            <a class="link" href="https://github.com/YangYuS8/wayvid" target="_blank" rel="noreferrer">查看项目 →</a>
           </article>
           <article class="project">
             <h3>yolopest</h3>
             <p>基于 YOLOv12 的智能虫害检测系统，包含 FastAPI 后端与 React 前端，支持图像 / 视频检测与结果管理。</p>
             <div class="meta">Python · GitHub ⭐ 51</div>
+            <a class="link" href="https://github.com/YangYuS8/yolopest" target="_blank" rel="noreferrer">查看项目 →</a>
           </article>
           <article class="project">
             <h3>yolojunk</h3>
             <p>基于 FastAPI + YOLO 的可回收物检测服务，前端使用 Next.js 15 + Tailwind CSS，由后端统一托管。</p>
             <div class="meta">Python · AI 应用落地</div>
+            <a class="link" href="https://github.com/YangYuS8/yolojunk" target="_blank" rel="noreferrer">查看项目 →</a>
           </article>
         </div>
       </section>
@@ -495,10 +368,9 @@
             </div>
           </div>
           <div class="card panel">
-            <h3 style="margin-top:0;">一句话总结我自己</h3>
-            <p>
-              我不是那种只会在本地跑 demo 的人。
-              我更想成为一个能把服务真正部署起来、能查问题、能收拾环境、能让系统稳定工作的工程方向实习生。
+            <strong style="font-size:1.08rem;">一句话总结我自己</strong>
+            <p class="muted" style="margin-top:10px;">
+              我不是那种只会在本地跑 demo 的人。我更想成为一个能把服务真正部署起来、能查问题、能收拾环境、能让系统稳定工作的工程方向实习生。
             </p>
           </div>
         </div>
@@ -506,7 +378,7 @@
     </main>
 
     <footer class="footer container">
-      <div>© 2026 杨栋森 · Built for GitHub Pages · Domain: yangyus8.top</div>
+      <div>© 2026 杨栋森 · Built with plain HTML/CSS · Hosted on GitHub Pages</div>
     </footer>
   </body>
 </html>
