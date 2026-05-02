@@ -1,0 +1,35 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  stamp?: string;
+  class?: string;
+  bodyClass?: string;
+}
+
+const { eyebrow, title, stamp, class: className, bodyClass } = Astro.props;
+const hasDefaultHeader = Boolean(eyebrow || title || stamp);
+const hasHeader = hasDefaultHeader || Astro.slots.has('header');
+---
+
+<section class:list={["dossier-frame px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12", className]}>
+  {hasHeader && (
+    <header class="border-b border-dossier-line/60 pb-6">
+      {Astro.slots.has('header') ? (
+        <slot name="header" />
+      ) : (
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div class="space-y-3">
+            {eyebrow && <p class="dossier-kicker">{eyebrow}</p>}
+            {title && <h2 class="dossier-title text-[clamp(2rem,5vw,3.75rem)]">{title}</h2>}
+          </div>
+          {stamp && <span class="dossier-stamp shrink-0">{stamp}</span>}
+        </div>
+      )}
+    </header>
+  )}
+
+  <div class:list={[hasHeader ? 'pt-6' : undefined, bodyClass]}>
+    <slot />
+  </div>
+</section>

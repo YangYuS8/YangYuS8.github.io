@@ -1,0 +1,68 @@
+---
+import { posts } from '../../data/posts';
+import { links } from '../../data/links';
+import SectionFrame from './SectionFrame.astro';
+
+const formatLogDate = (date: string) =>
+  new Date(`${date}T00:00:00`).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit'
+  });
+---
+
+<SectionFrame
+  eyebrow="Observation Stream"
+  title="Field Logs"
+  stamp="Latest Reports"
+  bodyClass="space-y-6"
+>
+  <div class="grid gap-5 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)]">
+    <aside class="border border-dossier-line/60 bg-dossier-panel/25 p-5 text-sm leading-7 text-dossier-muted">
+      <p class="dossier-kicker">Analyst Note</p>
+      <p class="mt-4">
+        The reporting trail stays focused on operational lessons: infrastructure reliability, deployment
+        discipline, and fault isolation under real-world constraints.
+      </p>
+      <a
+        href={links.blog}
+        class="mt-5 inline-flex items-center gap-3 border border-dossier-line/60 px-4 py-3 text-xs uppercase tracking-[0.18em] text-dossier-paper transition hover:bg-dossier-panel/35 hover:text-dossier-accent"
+      >
+        <span>Open full archive</span>
+      </a>
+    </aside>
+
+    <div class="divide-y divide-dossier-line/60 border border-dossier-line/60 bg-dossier-panel/20">
+      {posts.map((post) => (
+        <article class="px-5 py-5 sm:px-6">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div class="space-y-3">
+              <div class="space-y-2">
+                <p class="dossier-kicker">Log {post.id}</p>
+                <h3 class="text-lg uppercase tracking-[0.14em] text-dossier-paper">{post.title}</h3>
+              </div>
+              <p class="max-w-3xl text-sm leading-7 text-dossier-muted">{post.excerpt}</p>
+              <ul class="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <li class="border border-dossier-line/60 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-dossier-paper">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="min-w-44 space-y-4 lg:text-right">
+              <p class="text-xs uppercase tracking-[0.18em] text-dossier-muted">{formatLogDate(post.date)}</p>
+              <a
+                href={post.href}
+                class="inline-flex items-center gap-3 text-sm uppercase tracking-[0.16em] text-dossier-paper transition hover:text-dossier-accent"
+              >
+                <span>Read report</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</SectionFrame>

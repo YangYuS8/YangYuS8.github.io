@@ -1,0 +1,97 @@
+---
+interface Props {
+  lines: readonly string[];
+  prompt?: string;
+}
+
+const { lines, prompt = '>' } = Astro.props;
+const animationWindow = 3.6;
+---
+
+<div class="terminal-typewriter" aria-label="Profile terminal activity">
+  <ol class="space-y-2">
+    {lines.map((line, index) => (
+      <li style={`--line-index:${index}; --line-count:${lines.length}; --line-characters:${line.length}; --line-window:${animationWindow}s;`}>
+        <span class="terminal-prompt" aria-hidden="true">{prompt}</span>
+        <span class="terminal-line">{line}</span>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .terminal-typewriter {
+    border: 1px solid rgba(143, 219, 201, 0.18);
+    background: rgba(3, 12, 16, 0.78);
+    padding: 1rem;
+    color: var(--dossier-accent);
+    box-shadow: inset 0 0 0 1px rgba(143, 219, 201, 0.05);
+  }
+
+  .terminal-typewriter ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .terminal-typewriter li {
+    display: flex;
+    gap: 0.75rem;
+    min-height: 1.5rem;
+    opacity: 0;
+    animation: terminal-line-fade 0.01s linear forwards;
+    animation-delay: calc(var(--line-index) * var(--line-window));
+  }
+
+  .terminal-prompt {
+    color: rgba(143, 219, 201, 0.7);
+    flex: 0 0 auto;
+  }
+
+  .terminal-line {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 1px solid rgba(143, 219, 201, 0.75);
+    animation:
+      terminal-type calc(var(--line-characters) * 0.08s) steps(var(--line-characters), end) forwards,
+      terminal-caret 0.9s step-end infinite;
+    animation-delay: calc(var(--line-index) * var(--line-window));
+  }
+
+  @keyframes terminal-line-fade {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes terminal-type {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: calc(var(--line-characters) * 1ch);
+    }
+  }
+
+  @keyframes terminal-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .terminal-typewriter li {
+      opacity: 1;
+      animation: none;
+    }
+
+    .terminal-line {
+      width: auto;
+      border-right: 0;
+      animation: none;
+    }
+  }
+</style>

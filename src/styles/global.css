@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --dossier-ink: #071218;
+  --dossier-ink-soft: #0c1b22;
+  --dossier-panel: rgba(8, 20, 27, 0.82);
+  --dossier-panel-edge: rgba(126, 170, 179, 0.24);
+  --dossier-grid: rgba(112, 162, 173, 0.08);
+  --dossier-scanline: rgba(225, 241, 239, 0.035);
+  --dossier-glow: rgba(101, 211, 194, 0.16);
+  --dossier-paper: #d7e6e1;
+  --dossier-paper-dim: #91aca9;
+  --dossier-accent: #8fdbc9;
+  --dossier-alert: #f97352;
+  --dossier-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(143, 219, 201, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--dossier-ink-soft) 0%, var(--dossier-ink) 48%, #050c11 100%);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(143, 219, 201, 0.3);
+  color: var(--dossier-paper);
+}
+
+.dossier-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+  isolation: isolate;
+}
+
+.dossier-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--dossier-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--dossier-grid) 1px, transparent 1px);
+  background-size: 100% 48px, 48px 100%;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 100%);
+  z-index: -2;
+}
+
+.dossier-scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background-image: linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 3px,
+    var(--dossier-scanline) 4px
+  );
+  background-size: 100% 5px;
+  z-index: -1;
+}
+
+.dossier-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(145, 172, 169, 0.07);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+
+.dossier-frame {
+  position: relative;
+  width: min(100%, 72rem);
+  border: 1px solid var(--dossier-panel-edge);
+  background: linear-gradient(180deg, rgba(14, 31, 39, 0.95), var(--dossier-panel));
+  box-shadow: var(--dossier-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.dossier-frame::before,
+.dossier-frame::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(143, 219, 201, 0.1);
+  pointer-events: none;
+}
+
+.dossier-frame::after {
+  inset: auto 12px 12px auto;
+  width: 88px;
+  height: 88px;
+  border-top: 0;
+  border-left: 0;
+  border-right-color: rgba(143, 219, 201, 0.18);
+  border-bottom-color: rgba(143, 219, 201, 0.18);
+}
+
+.dossier-kicker {
+  color: var(--dossier-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.dossier-title {
+  margin: 0;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dossier-lede {
+  max-width: 42rem;
+  color: var(--dossier-paper-dim);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.dossier-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(249, 115, 82, 0.35);
+  padding: 0.45rem 0.8rem;
+  color: var(--dossier-alert);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.dossier-stamp::before {
+  content: '';
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 18px rgba(249, 115, 82, 0.45);
+}
+
+img {
+  display: block;
+}
+
+@layer base {
+  body {
+    @apply font-mono text-base tracking-[0.04em];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-[0.1em];
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 1px solid rgba(143, 219, 201, 0.7);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dossier-watermark {
+    letter-spacing: 0.24em;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0.88);
+  }
+
+  .dossier-frame::before {
+    inset: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dossier-shell,
+  .dossier-scanlines,
+  .dossier-watermark {
+    scroll-behavior: auto;
+  }
+}

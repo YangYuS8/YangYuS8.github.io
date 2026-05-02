@@ -1,0 +1,43 @@
+---
+import { profile } from '../../data/profile';
+import SectionFrame from './SectionFrame.astro';
+---
+
+<SectionFrame
+  eyebrow="Executive Brief"
+  title="Profile Summary"
+  stamp={profile.verification}
+>
+  <div class="grid gap-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(280px,0.7fr)]">
+    <article class="space-y-4 border border-dossier-line/60 bg-dossier-panel/30 p-6 lg:p-7">
+      <p class="dossier-kicker">Assessment Abstract</p>
+      <p class="dossier-lede max-w-3xl">{profile.summary}</p>
+    </article>
+
+    <aside class="border border-dossier-line/60 bg-dossier-panel/35 p-5 text-sm text-dossier-muted">
+      <p class="dossier-kicker">Education / Background</p>
+      <div class="mt-4 space-y-3 leading-7">
+        <p>
+          <span class="text-dossier-paper">Institution</span>
+          <span class="text-dossier-muted"> // </span>
+          {profile.education.institution}
+        </p>
+        <p>
+          <span class="text-dossier-paper">Major</span>
+          <span class="text-dossier-muted"> // </span>
+          {profile.education.major}
+        </p>
+        <p>
+          <span class="text-dossier-paper">Expected Graduation</span>
+          <span class="text-dossier-muted"> // </span>
+          {profile.education.expectedGraduation}
+        </p>
+        <p>
+          <span class="text-dossier-paper">Academic Focus</span>
+          <span class="text-dossier-muted"> // </span>
+          {profile.education.academicFocus}
+        </p>
+      </div>
+    </aside>
+  </div>
+</SectionFrame>

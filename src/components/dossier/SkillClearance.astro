@@ -1,0 +1,79 @@
+---
+import { profile } from '../../data/profile';
+import SectionFrame from './SectionFrame.astro';
+
+const getConfidenceClass = (score: number) => {
+  if (score >= 5) return 'bg-dossier-accent';
+  if (score >= 4) return 'bg-dossier-paper/90';
+  if (score >= 3) return 'bg-dossier-paper/70';
+  if (score >= 2) return 'bg-dossier-paper/50';
+
+  return 'bg-dossier-paper/30';
+};
+
+const scale = [1, 2, 3, 4, 5];
+---
+
+<SectionFrame
+  eyebrow="Capability Audit"
+  title="Skill Clearance"
+  stamp="Operational Confidence"
+  bodyClass="space-y-6"
+>
+  <div class="flex flex-col gap-3 border border-dossier-line/60 bg-dossier-panel/25 p-4 text-sm text-dossier-muted lg:flex-row lg:items-end lg:justify-between">
+    <div class="space-y-2">
+      <p class="dossier-kicker">Reading Guide</p>
+      <p>
+        Clearance is expressed as operational confidence, combining current hands-on exposure with observed
+        delivery reliability.
+      </p>
+    </div>
+    <p class="text-xs uppercase tracking-[0.18em] text-dossier-paper">
+      Developing <span class="text-dossier-muted">01</span> to High <span class="text-dossier-muted">05</span>
+    </p>
+  </div>
+
+  <div class="overflow-hidden border border-dossier-line/60">
+    <div class="hidden grid-cols-[minmax(0,1.3fr)_140px_minmax(180px,220px)_minmax(0,1.1fr)] gap-4 border-b border-dossier-line/60 bg-dossier-panel/40 px-5 py-4 text-xs uppercase tracking-[0.18em] text-dossier-muted md:grid">
+      <span>Domain</span>
+      <span>Confidence</span>
+      <span>Relative Strength</span>
+      <span>Evidence</span>
+    </div>
+
+    <div class="divide-y divide-dossier-line/60">
+      {profile.skillMatrix.map((skill) => (
+        <article class="grid gap-4 bg-dossier-panel/20 px-5 py-5 md:grid-cols-[minmax(0,1.3fr)_140px_minmax(180px,220px)_minmax(0,1.1fr)] md:items-center">
+          <div>
+            <p class="dossier-kicker md:hidden">Domain</p>
+            <p class="text-sm uppercase tracking-[0.14em] text-dossier-paper">{skill.domain}</p>
+          </div>
+
+          <div>
+            <p class="dossier-kicker md:hidden">Confidence</p>
+            <p class="text-sm uppercase tracking-[0.14em] text-dossier-paper">{skill.confidence}</p>
+          </div>
+
+          <div>
+            <p class="dossier-kicker md:hidden">Relative Strength</p>
+            <div class="mt-2 flex gap-2 md:mt-0">
+              {scale.map((level) => (
+                <span
+                  class:list={[
+                    'h-3 flex-1 border border-dossier-line/70 bg-dossier-panel/20',
+                    level <= skill.score && getConfidenceClass(skill.score)
+                  ]}
+                ></span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p class="dossier-kicker md:hidden">Evidence</p>
+            <p class="text-sm leading-7 text-dossier-muted">{skill.evidence}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</SectionFrame>

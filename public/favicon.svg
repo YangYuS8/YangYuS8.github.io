@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Classified dossier favicon</title>
+  <rect width="64" height="64" rx="10" fill="#071218" />
+  <rect x="8" y="8" width="48" height="48" rx="6" fill="none" stroke="#8fdbc9" stroke-opacity="0.5" />
+  <path d="M18 18h28v6H18zm0 11h20v4H18zm0 9h28v4H18zm0 9h16v4H18z" fill="#d7e6e1" />
+  <circle cx="46" cy="46" r="5" fill="#f97352" fill-opacity="0.9" />
+</svg>

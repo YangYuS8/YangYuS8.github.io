@@ -1,0 +1,74 @@
+---
+import { links } from '../../data/links';
+import SectionFrame from './SectionFrame.astro';
+
+const accessChannels = [
+  {
+    label: 'GitHub Mirror',
+    href: links.github,
+    detail: 'Source archives and active repositories',
+    value: links.github.replace('https://', '')
+  },
+  {
+    label: 'Field Journal',
+    href: links.blog,
+    detail: 'Published reports and operating notes',
+    value: links.blog.replace('https://', '')
+  },
+  {
+    label: 'Direct Contact',
+    href: links.email,
+    detail: 'Coordination channel for collaboration',
+    value: links.email.replace('mailto:', '')
+  },
+  {
+    label: 'Resume Extract',
+    href: links.resume,
+    detail: 'Condensed personnel summary in PDF form',
+    value: 'Local document access'
+  }
+];
+---
+
+<SectionFrame
+  eyebrow="Clearance Gateway"
+  title="Access Request"
+  stamp="No Form Submission"
+  bodyClass="space-y-6"
+>
+  <div class="grid gap-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <article class="border border-dossier-line/60 bg-dossier-panel/30 p-6">
+      <p class="dossier-kicker">Request Protocol</p>
+      <div class="mt-4 space-y-4 text-sm leading-7 text-dossier-muted">
+        <p>
+          Access is granted through established external channels rather than embedded form handling. Use the
+          dossier links to inspect prior work, review technical writing, or initiate direct contact.
+        </p>
+        <p>
+          Preferred inquiries include engineering roles, systems work, automation, and operational tooling with
+          room for hands-on execution.
+        </p>
+      </div>
+    </article>
+
+    <div class="divide-y divide-dossier-line/60 border border-dossier-line/60 bg-dossier-panel/20">
+      {accessChannels.map((channel) => (
+        <a
+          href={channel.href}
+          class="group grid gap-3 px-5 py-5 transition hover:bg-dossier-panel/35 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] sm:items-start sm:px-6"
+        >
+          <div class="space-y-2">
+            <p class="text-sm uppercase tracking-[0.16em] text-dossier-paper">{channel.label}</p>
+            <p class="text-sm leading-7 text-dossier-muted">{channel.detail}</p>
+          </div>
+          <div class="space-y-2 sm:text-right">
+            <p class="dossier-kicker">Route</p>
+            <p class="break-all text-sm text-dossier-muted transition group-hover:text-dossier-accent">
+              {channel.value}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</SectionFrame>
